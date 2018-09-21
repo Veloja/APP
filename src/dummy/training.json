@@ -18,7 +18,7 @@
     "itemType": "exercise",
     "name": "trbušnjaci",
     "type": "ramena",
-    "sets": 10,
+    "sets": 9,
     "repetitions": [20, 16, 12, 8, 6, 20, 16, 12, 8, 6],
     "hasWeights": true,
     "weights": [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],

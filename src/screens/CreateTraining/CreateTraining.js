@@ -20,7 +20,7 @@ export default class CreateTraining extends Component {
 
 	render() {
 		return (
-			<TrainingScreen>
+			<STrainingScreen>
 				{
 					this.state.items.map(item => {
 						if (item.itemType === 'break') {
@@ -36,12 +36,12 @@ export default class CreateTraining extends Component {
 					// 	: <Exercise item={item} />
 					// })
 				}
-			</TrainingScreen>
+			</STrainingScreen>
 		);
 	}
 }
 
-const TrainingScreen = style.div`
-	background-color: darkblue;
+const STrainingScreen = style.div`
+	background-color: rgb(54,54,54);
 	padding: 50px;
 `
