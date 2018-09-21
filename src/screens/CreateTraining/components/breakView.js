@@ -13,6 +13,10 @@ const breakView = ({item}) => {
 }
 
 const SContainer = style.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	text-align: center;
 	width: 450px;
 	margin: 0 auto;

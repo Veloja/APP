@@ -23,7 +23,6 @@ const Repetition = ({count = 0}) => {
 }
 
 const SContainer = style.div`
-	display: inline-block;
 	width: 40px;
 	height: 40px;
 `

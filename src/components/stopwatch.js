@@ -15,10 +15,7 @@ const Stopwatch = ({minutes = 1}) => {
 }
 
 const SContainer = style.div`
-	display: inline-block;
 	position: relative;
-	top:0; left:0; bottom:0; right:0; 
-	margin: auto;
 	width: 50px;
 	height: 50px;
 	border: 1px solid transparent;
