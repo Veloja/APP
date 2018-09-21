@@ -1,7 +1,6 @@
 import React from 'react';
 import style from 'styled-components';
 
-
 const excerciseView = ({item}) => {
 	return (
 		<ExerciseView>
