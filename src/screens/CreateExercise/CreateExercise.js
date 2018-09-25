@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import style from 'styled-components';
+import React, { Component } from 'react'
+import style from 'styled-components'
+import {withRouter} from 'react-router-dom'
 
-export default class CreateExercise extends Component {
+class CreateExcercise extends Component {
     constructor(props) {
         super(props);
 
@@ -14,6 +15,7 @@ export default class CreateExercise extends Component {
 
         return (
             <SExerciseContainer>
+                <button onClick={this.back}>Back</button>
                 <SInputGroup>
                     <label>Exercise name: </label>
                     <input type="text" defaultValue="Enter name" />
@@ -51,6 +53,7 @@ export default class CreateExercise extends Component {
                             )
                         }
                     </WrapForRepetitons>
+                    <button onClick={this.save}>Save</button>
             </SExerciseContainer>
         )
     }
@@ -61,12 +64,16 @@ export default class CreateExercise extends Component {
         })
     }
 
-    // updateSets = (event) => {
-    //     this.setState({
-    //        sets: event.target.value
-    //     })
-    // }
+    back = () => {
+        this.props.history.goBack()
+    }
+
+    save = () => {
+        this.back()
+    }
 }
+
+export default withRouter(CreateExcercise)
 
 const SExerciseContainer = style.div`
     height: 400px;

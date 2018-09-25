@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch  } from 'react-router-dom';
 
 import { injectGlobal } from 'styled-components';
 
-// import CreateTraining from './screens/CreateTraining/CreateTraining';
+import CreateTraining from './screens/CreateTraining/CreateTraining';
 import CreateExercise from './screens/CreateExercise/CreateExercise';
 
 injectGlobal`
@@ -12,6 +13,21 @@ injectGlobal`
 		padding: 0;
 		font-family: Arial, Helvetica, sans-serif;
 	}
+
+
 `
 
-ReactDOM.render(<CreateExercise />, document.getElementById('root'));
+class Root extends Component {
+	render(){
+		return (
+			<BrowserRouter>
+				<Switch>
+					<Route exact path={'/'} component={CreateTraining} />
+					<Route path={'/exercise'} component={CreateExercise} />
+				</Switch>
+			</BrowserRouter>
+		)
+	}
+}
+
+ReactDOM.render(<Root />, document.getElementById('root'));
