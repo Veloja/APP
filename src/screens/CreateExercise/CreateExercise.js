@@ -24,35 +24,40 @@ class CreateExcercise extends Component {
                     <label>Sets: </label>
                     <input type="number" defaultValue={0} onChange={this.updateSets} />
                 </SInputGroup>
-                    <WrapForRepetitons>
-                        {
-                            [...Array(this.state.sets)].map((item, index) =>
-                                <SBasedOnSets sets={this.state.sets} >
-                                    <input key={index} type="number" />
-                                </SBasedOnSets>
-                            )
-                        }
-                    </WrapForRepetitons>
+                    <WrapperForEverything>
+                        <WrapForRepetitons>
+                            <label for="reps">Reps</label>
+                            {
+                                [...Array(this.state.sets)].map((item, index) =>
+                                    <SBasedOnSets sets={this.state.sets} >
+                                        <input key={index} type="number" />
+                                    </SBasedOnSets>
+                                )
+                            }
+                        </WrapForRepetitons>
 
-                    <WrapForRepetitons>
-                        {
-                            [...Array(this.state.sets)].map((item, index) =>
-                                <SBasedOnSets sets={this.state.sets} >
-                                    <input key={index} type="number" />
-                                </SBasedOnSets>
-                            )
-                        }
-                    </WrapForRepetitons>
+                        <WrapForRepetitons>
+                            <label for="weights">Weights</label>
+                            {
+                                [...Array(this.state.sets)].map((item, index) =>
+                                    <SBasedOnSets sets={this.state.sets} >
+                                        <input id="weights" key={index} type="number" />
+                                    </SBasedOnSets>
+                                )
+                            }
+                        </WrapForRepetitons>
 
-                    <WrapForRepetitons>
-                        {
-                            [...Array(this.state.sets)].map((item, index) =>
-                                <SBasedOnSets sets={this.state.sets} >
-                                    <input key={index} type="number" />
-                                </SBasedOnSets>
-                            )
-                        }
-                    </WrapForRepetitons>
+                        <WrapForRepetitons>
+                            <label for="Break">Break</label>
+                            {
+                                [...Array(this.state.sets)].map((item, index) =>
+                                    <SBasedOnSets sets={this.state.sets} >
+                                        <input key={index} type="number" />
+                                    </SBasedOnSets>
+                                )
+                            }
+                        </WrapForRepetitons>
+                    </WrapperForEverything>
                     <button onClick={this.save}>Save</button>
             </SExerciseContainer>
         )
@@ -92,17 +97,22 @@ const SInputGroup = style.div`
         display: inline-block;
     }
 `
-
-const WrapForRepetitons = style.div`
+const WrapperForEverything = style.div`
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     max-width: 500px;
+`
+
+const WrapForRepetitons = style.div`
+    max-width: 30%;
 `
 
 const SBasedOnSets = style.div`
     display: block;
     width: 100px;
     min-width: 33%;
+    margin-bottom: 10px;
     input {
         width: 100px;
     }
