@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import style from 'styled-components'
 import {withRouter} from 'react-router-dom'
+import * as Service from '../../services/ExerciseService'
 
 class CreateExcercise extends Component {
     constructor(props) {
@@ -74,6 +75,7 @@ class CreateExcercise extends Component {
     }
 
     save = () => {
+				Service.createExercise(this.state.exercise)
         this.back()
     }
 }
