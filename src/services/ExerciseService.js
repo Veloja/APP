@@ -22,7 +22,7 @@ export const updateExercise = (updatedExercise) => {
 
 export const deleteExercise = (exerciseToDelete) => {
 	const updatedExercises = getExercises().filter(exercise => 
-		exerciseToDelete.id === exercise.id
+		exerciseToDelete.id !== exercise.id
 	)
 	localStorage.setItem(EXERCISES_KEY, toJson([...updatedExercises]))
 }
