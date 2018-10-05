@@ -17,7 +17,7 @@ class CreateTraining extends Component {
 
 	componentWillMount(){
 		this.setState({
-			items: require('../../dummy/training.json')
+			items: Service.getExercises()
 		})
 	}
 
