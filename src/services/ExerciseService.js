@@ -7,7 +7,7 @@ export const getExercises = () => {
 export const createExercise = (exercise) => {
 	let newExercse = {
 		...exercise, 
-		id: getExercises().length
+		id: getExercises().length,
 	}
 	localStorage.setItem(EXERCISES_KEY, toJson([...getExercises(), newExercse]))
 	return newExercse.id
