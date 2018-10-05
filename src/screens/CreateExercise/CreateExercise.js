@@ -7,8 +7,11 @@ class CreateExcercise extends Component {
 		constructor(props) {
 				super(props);
 
-				this.state = {
-						sets: 3
+		this.state = {
+			sets: 3,
+			breaks: [...Array(3)],
+			reps: [...Array(3)],
+			weights: [...Array(3)]
 				}
 		}
 
@@ -19,42 +22,42 @@ class CreateExcercise extends Component {
 								<button onClick={this.back}>Back</button>
 								<SInputGroup>
 										<label>Exercise name: </label>
-										<input type="text" defaultValue="Enter name" />
+										<input name="name" type="text" defaultValue="Enter name"
+														onChange={this.onInputChange} />
 								</SInputGroup>
 								<SInputGroup>
 										<label>Sets: </label>
-										<input type="number" defaultValue={this.state.sets} onChange={this.updateSets}
-										min={1} max={10} />
+										<input name="sets" type="number" defaultValue={3} onChange={this.onSetsChange} min={1}/>
 								</SInputGroup>
 										<WrapperForEverything>
 												<WrapForRepetitons>
-														<label for="reps">Reps</label>
+														<label htmlFor="reps">Reps</label>
 														{
-																[...Array(this.state.sets)].map((item, index) =>
-																		<SBasedOnSets sets={this.state.sets} >
-																				<input key={index} type="number" />
+																[...Array(+this.state.sets)].map((item, index) =>
+																		<SBasedOnSets key={index} sets={this.state.sets} >
+																				<input name="reps" onChange={(event) => this.onPropChange(event, index)} type="number" />
 																		</SBasedOnSets>
 																)
 														}
 												</WrapForRepetitons>
 
 												<WrapForRepetitons>
-														<label for="weights">Weights</label>
+														<label htmlFor="weights">Weights</label>
 														{
-																[...Array(this.state.sets)].map((item, index) =>
-																		<SBasedOnSets sets={this.state.sets} >
-																				<input id="weights" key={index} type="number" />
+																[...Array(+this.state.sets)].map((item, index) =>
+																		<SBasedOnSets key={index} sets={this.state.sets} >
+																				<input name="weights" onChange={(event) => this.onPropChange(event, index)} id="weights" type="number" />
 																		</SBasedOnSets>
 																)
 														}
 												</WrapForRepetitons>
 
 												<WrapForRepetitons>
-														<label for="Break">Break</label>
+														<label htmlFor="Break">Break</label>
 														{
-																[...Array(this.state.sets)].map((item, index) =>
-																		<SBasedOnSets sets={this.state.sets} >
-																				<input key={index} type="number" />
+																[...Array(+this.state.sets)].map((item, index) =>
+																		<SBasedOnSets key={index} sets={this.state.sets} >
+																				<input name="breaks" onChange={(event) => this.onPropChange(event, index)} type="number" />
 																		</SBasedOnSets>
 																)
 														}
@@ -63,8 +66,32 @@ class CreateExcercise extends Component {
 										<button onClick={this.save}>Save</button>
 						</SExerciseContainer>
 				)
-		}
+	}
+		onInputChange = (event) => {
+				this.setState({
+						[event.target.name]: event.target.value
+		}, () => console.log(this.state))
+	}
 
+	onSetsChange = (event) => {
+		const sets = +event.target.value
+		const placeholder = [...Array(sets)]
+		this.setState({
+			sets,
+			reps: [...this.state.reps, ...placeholder].slice(0, sets),
+			weights: [...this.state.weights, ...placeholder].slice(0, sets),
+			breaks: [...this.state.breaks, ...placeholder].slice(0, sets)
+		}, () => console.log(this.state))
+	}
+
+	onPropChange = (event, index) => {
+		let arr = [...this.state[event.target.name]]
+		arr[index] = event.target.value
+		this.setState({
+			[event.target.name]: arr
+		}, () => console.log(this.state))
+	}
+	
 		updateSets = (event) => {
 				this.setState({
 					sets: +event.target.value
