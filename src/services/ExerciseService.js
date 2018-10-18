@@ -7,9 +7,9 @@ export const getExercises = () => {
 export const createExercise = (exercise) => {
 	let newExercse = {
 		...exercise, 
-		id: getExercises().length,
+		id: Date.now(),
 	}
-	localStorage.setItem(EXERCISES_KEY, toJson([...getExercises(), newExercse]))
+	localStorage.setItem(EXERCISES_KEY, JSON.stringify([...getExercises(), newExercse]))
 	return newExercse.id
 }
 
@@ -17,18 +17,16 @@ export const updateExercise = (updatedExercise) => {
 	const updatedExercises = getExercises().map((exercise) => 
 			exercise.id === updatedExercise.id ? updatedExercise : exercise
 	)
-	localStorage.setItem(EXERCISES_KEY, toJson([...updatedExercises]))
+	localStorage.setItem(EXERCISES_KEY, JSON.stringify([...updatedExercises]))
 }
 
 export const deleteExercise = (exerciseToDelete) => {
 	const updatedExercises = getExercises().filter(exercise => 
 		exerciseToDelete.id !== exercise.id
 	)
-	localStorage.setItem(EXERCISES_KEY, toJson([...updatedExercises]))
+	localStorage.setItem(EXERCISES_KEY, JSON.stringify([...updatedExercises]))
 }
 
 export const clearAll = () => {
 	localStorage.clear()
 }
-
-const toJson = (data) => JSON.stringify(data)
