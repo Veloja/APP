@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
+import TrainersList from './screens/client/TrainersList/TrainersList'
+
+import './index.scss'
+
 class Root extends Component {
 	render(){
 		return (
-			<div>
-				<h1>Checkout development to see the progress of an app</h1>
-			</div>
+			<TrainersList />
 		)
 	}
 }
