@@ -1,31 +1,12 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch  } from 'react-router-dom';
-
-import { injectGlobal } from 'styled-components';
-
-import CreateTraining from './screens/CreateTraining/CreateTraining';
-import CreateExercise from './screens/CreateExercise/CreateExercise';
-
-injectGlobal`
-	* {
-		margin: 0;
-		padding: 0;
-		font-family: Arial, Helvetica, sans-serif;
-	}
-
-
-`
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 
 class Root extends Component {
 	render(){
 		return (
-			<BrowserRouter>
-				<Switch>
-					<Route exact path={'/'} component={CreateTraining} />
-					<Route path={'/exercise'} component={CreateExercise} />
-				</Switch>
-			</BrowserRouter>
+			<div>
+				<h1>Checkout development to see the progress of an app</h1>
+			</div>
 		)
 	}
 }
