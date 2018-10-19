@@ -4,16 +4,16 @@ import {withRouter} from 'react-router-dom'
 import * as Service from '../../services/ExerciseService'
 
 class CreateExcercise extends Component {
-		constructor(props) {
-				super(props);
+	constructor(props) {
+		super(props);
 
 		this.state = {
 			sets: 3,
 			breaks: [...Array(3)],
 			reps: [...Array(3)],
 			weights: [...Array(3)]
-				}
 		}
+	}
 
 		render() {
 
