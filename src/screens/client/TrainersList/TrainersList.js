@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import './style.scss'
 
-import { ReactComponent as SvgLocation } from './assets/location.svg'
-import { ReactComponent as SvgClient } from './assets/clients.svg'
-import { ReactComponent as SvgVerified } from './assets/verified.svg'
-import { ReactComponent as SvgStarEmpty } from './assets/star-empty.svg'
-import { ReactComponent as SvgStarFull } from './assets/star-full.svg'
+import { ReactComponent as SvgLocation } from 'assets/location.svg'
+import { ReactComponent as SvgClient } from 'assets/clients.svg'
+import { ReactComponent as SvgVerified } from 'assets/verified.svg'
+import { ReactComponent as SvgStarEmpty } from 'assets/star-empty.svg'
+import { ReactComponent as SvgStarFull } from 'assets/star-full.svg'
 
 export default class TrainersList extends Component {
 	render() {

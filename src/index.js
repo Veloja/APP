@@ -1,16 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
-
-import TrainersList from './screens/client/TrainersList/TrainersList'
 
 import './index.scss'
 
-class Root extends Component {
-	render(){
-		return (
-			<TrainersList />
-		)
-	}
-}
+// import TrainersList from './screens/client/TrainersList/TrainersList'
+import TrainerDetails from './screens/client/TrainerDetails/TrainerDetails'
 
-ReactDOM.render(<Root />, document.getElementById('root'));
+ReactDOM.render(<TrainerDetails />, document.getElementById('root'));
