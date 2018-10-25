@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import './style.scss'
 
 import { ReactComponent as SvgLocation } from 'assets/location.svg'
@@ -10,7 +11,7 @@ import { ReactComponent as SvgStarFull } from 'assets/star-full.svg'
 export default class TrainersList extends Component {
 	render() {
 		return (
-			<div className="container">
+			<div className="trainers-list">
 				<h1 className="title">Choose your trainer</h1> 
 				<ul className="list">
 				{

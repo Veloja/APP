@@ -9,7 +9,7 @@ import { ReactComponent as SvgStarEmpty } from 'assets/star-empty.svg'
 export default class TrainerDetails extends Component {
 	render() {
 		return (
-			<div className="container">
+			<div className="trainer-details">
 				<h1 className="title"><SvgVerified/>Vladan Velojić</h1>
 				<div className="avatar">
 					{/* <img src="http://via.placeholder.com/250/ffefd5" alt="TrainerImage" /> */}
@@ -29,7 +29,7 @@ export default class TrainerDetails extends Component {
 					<span className="info">City: Novi Sad</span>
 					<span className="info">Member since: 10.21.2018.</span>
 					<span className="info">Live sessions: YES</span>
-					<span className="info"></span>
+					<span className="info">izbaci ovo</span>
 				</div>
 				<div className="actions">
 					<button className="button primary" onClick={() => alert("Open 'Hire Trainer' dialog")}>Hire</button>

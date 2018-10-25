@@ -1,6 +1,6 @@
-.trainers-list {
+.clients-list {
 	padding: 10px;
-	max-height: 100%;
+	height: calc(100vh - 20px);
 	
 	.title {
 		font-size: 1.5em;
@@ -68,14 +68,5 @@
 	
 	.name {
 		font-size: 1em;
-	}
-	
-	.price {
-		position: absolute;
-		top: 0;
-		right: 0;
-		font-size: 1em;
-		color: lightseagreen;
-		font-weight: bolder;
 	}
 }

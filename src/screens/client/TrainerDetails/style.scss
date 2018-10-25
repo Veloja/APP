@@ -1,99 +1,100 @@
-.container {
+.trainer-details {
 	background: #eee;
 	padding: 10px;
 	height: 100vh;
 	position: relative;
-}
 
-.title, .info {
-	svg {
-		width: 1.5rem;
-		height: 1.5rem;
-		margin-right: 3px;
-
-		path {
-			fill: lightseagreen;
+	.title, .info {
+		svg {
+			width: 1.5rem;
+			height: 1.5rem;
+			margin-right: 3px;
+	
+			path {
+				fill: lightseagreen;
+			}
+		}
+	}
+	
+	.title {
+		font-size: 1.5em;
+		text-transform: uppercase;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: lightseagreen;
+		margin: 10px 0;
+	}
+	
+	.avatar {
+		border: 1px solid lightseagreen;
+		position: relative;
+		margin: 0 auto;
+		border-radius: 25%;
+		width: 300px;
+		height: 300px;
+		overflow: hidden;
+		> img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 120%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	
+	.details {
+		margin: 5px 5px 5px 15px;
+		flex: 1;
+		position: relative;
+	}
+	
+	.info {
+		font-size: 1rem;
+		margin-top: 5px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	
+	.rating {
+		justify-content: center;
+		color: lightseagreen;
+	}
+	
+	.actions {
+		position: absolute;
+		display: flex;
+		flex: 1;
+		flex-direction: row;
+		justify-content: space-around;
+		align-content: center;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding-bottom: 40px;
+	}
+	
+	.button {
+		border-radius: 34px;
+		height: 1px;
+		line-height: 0;
+		background-color: #eee;
+		color: lightseagreen;
+		width: 40%;
+		font-size: 1.5rem;
+		padding: 20px;
+		border: solid lightseagreen 1px;
+		text-decoration: none;
+		display: inline-block;
+		cursor: pointer;
+	
+		&.primary{
+			background-color: lightseagreen;
+			color: #eee;
 		}
 	}
 }
 
-.title {
-	font-size: 1.5em;
-	text-transform: uppercase;
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: lightseagreen;
-	margin: 10px 0;
-}
-
-.avatar {
-	border: 1px solid lightseagreen;
-	position: relative;
-	margin: 0 auto;
-	border-radius: 25%;
-	width: 300px;
-	height: 300px;
-	overflow: hidden;
-	> img {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: 120%;
-		transform: translate(-50%, -50%);
-	}
-}
-
-.details {
-	margin: 5px 5px 5px 15px;
-	flex: 1;
-	position: relative;
-}
-
-.info {
-	font-size: 1rem;
-	margin-top: 5px;
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-}
-
-.rating {
-	justify-content: center;
-	color: lightseagreen;
-}
-
-.actions {
-	position: absolute;
-	display: flex;
-	flex: 1;
-	flex-direction: row;
-	justify-content: space-around;
-	align-content: center;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	padding-bottom: 40px;
-}
-
-.button {
-	border-radius: 34px;
-	height: 1px;
-	line-height: 0;
-	background-color: #eee;
-	color: lightseagreen;
-	width: 40%;
-	font-size: 1.5rem;
-	padding: 20px;
-	border: solid lightseagreen 1px;
-	text-decoration: none;
-	display: inline-block;
-	cursor: pointer;
-
-	&.primary{
-		background-color: lightseagreen;
-		color: #eee;
-	}
-}

@@ -1,27 +1,37 @@
-.trainers-list {
-	padding: 10px;
-	max-height: 100%;
+.trainings-list {
+	display: grid;
+	height: 100vh;
+	grid-auto-columns: 1fr;
+	grid-auto-rows: auto 1fr;
+	overflow: hidden;
 	
-	.title {
-		font-size: 1.5em;
-		text-transform: uppercase;
-		text-align: center;
-		color: lightseagreen;
-	}
-	
-	.list {
-		padding: 7px 0;
-	}
-	
-	.item {
+	.header, .item {
 		background: #eee;
 		display: flex;
 		flex-wrap: nowrap;
 		align-items: flex-start;
 		border-radius: 1em;
-		margin: 10px 5px;
 		padding: 10px;
-		cursor: pointer;
+	}
+
+	.header {
+		margin: 10px;
+	}
+
+	.trainings {
+		margin: 10px;
+		overflow-y: auto;
+	}
+
+	.list-header {
+		padding: 5px;
+		font-size: 1.2em;
+		font-weight: normal;
+	}
+
+	.item {
+		position: relative;
+		margin-bottom: 10px;
 	}
 	
 	.avatar {
@@ -54,28 +64,39 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
-		
-		svg {
-			width: 1rem;
-			height: 1rem;
-			margin-right: 3px;
-	
-			path {
-				fill: lightseagreen;
-			}
-		}
 	}
 	
 	.name {
 		font-size: 1em;
 	}
-	
-	.price {
+
+	.time {
 		position: absolute;
-		top: 0;
 		right: 0;
-		font-size: 1em;
-		color: lightseagreen;
-		font-weight: bolder;
+		padding-right: 10px;
+	}
+
+	.list {
+		padding-bottom: 5px;
+
+		&.today {
+			.item {
+				font-size: 1.2em;
+				color: white;
+				background-color: lightseagreen;
+			}
+		}
+
+		&.pending {
+			.item {
+				border: 1px solid lightseagreen;
+			}
+		}
+
+		&.finished {
+			.item {
+				color: lightslategrey;
+			}
+		}
 	}
 }
