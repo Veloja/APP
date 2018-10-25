@@ -21,7 +21,7 @@ export default class TrainingsList extends Component {
 				<div className="trainings">
 					<div className="list today">
 						<h2 className="list-header">Today's training</h2>
-						<div className="item">
+						<div className="item" onCLick={() => alert('Open training preview')}>
 							<span className="date">{WEEKDAYS[today.getDay()]}, {today.getDate()}/{today.getMonth()}</span>
 							<span className="time">18:00</span>
 						</div>
@@ -31,7 +31,7 @@ export default class TrainingsList extends Component {
 						<ul className="sublist">
 						{
 							[...Array(4)].map((item, i) => 
-								<li key={i} className="item">
+								<li key={i} className="item" onClick={() => alert('Open training preview')}>
 									<span className="date">{WEEKDAYS[(today.getDay()+i)%7]}, {(today.getDate()+i+1)%31+1}/{today.getMonth()}</span>
 									<span className="time">18:00</span>
 								</li>
@@ -44,7 +44,7 @@ export default class TrainingsList extends Component {
 						<ul className="sublist">
 						{
 							[...Array(7)].map((item, i) => 
-								<li key={i} className="item">
+								<li key={i} className="item" onClick={() => alert('Open training preview')}>
 									<span className="date">{WEEKDAYS[(today.getDay()+i)%7]}, {(today.getDate()+i+1)%31+1}/{today.getMonth()}</span>
 									<span className="time">18:00</span>
 								</li>

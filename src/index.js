@@ -10,7 +10,7 @@ import TrainerDetails from './screens/client/TrainerDetails/TrainerDetails'
 // Trainer Screens
 import ClientsList from './screens/trainer/ClientsList/ClientsList'
 import TrainingsList from './screens/trainer/TrainingsList/TrainingsList'
+import TrainingPreview from './screens/trainer/TrainingPreview/TrainingPreview'
 import NewExcercise from './screens/trainer/NewExcercise/NewExercise'
-import NewTraining from './screens/trainer/NewTraining/NewTraining'
 
-ReactDOM.render(<TrainingsList />, document.getElementById('root'))
+ReactDOM.render(<TrainingPreview />, document.getElementById('root'))
