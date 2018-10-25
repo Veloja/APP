@@ -6,7 +6,7 @@ export default class TrainingPreview extends Component {
 	render() {
 		return (
 			<div className="training-preview">
-				<div className="header">
+				<div className="header" onClick={() => alert('Show client trainings (BACK)')}>
 					<div className="avatar">
 						<img src="https://media.licdn.com/dms/image/C4E03AQHFs9F5kcJ0QQ/profile-displayphoto-shrink_200_200/0?e=1545868800&v=beta&t=AvG0wFnqkbqmfP8y-HpFmUUO2kd1pItaMnAsKdn1YFc" alt="ClientImage" />
 					</div>
